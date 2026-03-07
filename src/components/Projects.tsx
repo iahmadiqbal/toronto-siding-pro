@@ -102,23 +102,94 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center p-6 bg-card rounded-xl border border-border">
-            <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">500+</div>
-            <div className="text-sm text-muted-foreground font-medium">Projects Completed</div>
-          </div>
-          <div className="text-center p-6 bg-card rounded-xl border border-border">
-            <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">25+</div>
-            <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
-          </div>
-          <div className="text-center p-6 bg-card rounded-xl border border-border">
-            <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">100%</div>
-            <div className="text-sm text-muted-foreground font-medium">Satisfaction Rate</div>
-          </div>
-          <div className="text-center p-6 bg-card rounded-xl border border-border">
-            <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">5000+</div>
-            <div className="text-sm text-muted-foreground font-medium">Happy Clients</div>
+        {/* Stats Section with Progress Bars */}
+        <div className="mt-16 bg-gradient-to-br from-primary to-primary/90 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+          {/* Background Decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
+          
+          <div className="relative z-10">
+            <div className="text-center mb-10">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Our Track Record Speaks for Itself</h3>
+              <p className="text-white/80 text-base">Trusted by thousands across the Greater Toronto Area</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Projects Completed */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-white font-semibold text-lg">Projects Completed</span>
+                  <span className="text-secondary font-bold text-2xl">500+</span>
+                </div>
+                <div className="relative h-3 bg-white/20 rounded-full overflow-hidden">
+                  <div 
+                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-secondary to-amber-400 rounded-full transition-all duration-1000 ease-out"
+                    style={{ width: '95%' }}
+                  >
+                    <div className="absolute inset-0 bg-white/30 animate-pulse"></div>
+                  </div>
+                </div>
+                <p className="text-white/70 text-sm mt-2">Residential & Commercial Projects</p>
+              </div>
+
+              {/* Years Experience */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-white font-semibold text-lg">Years of Experience</span>
+                  <span className="text-secondary font-bold text-2xl">25+</span>
+                </div>
+                <div className="relative h-3 bg-white/20 rounded-full overflow-hidden">
+                  <div 
+                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full transition-all duration-1000 ease-out"
+                    style={{ width: '85%' }}
+                  >
+                    <div className="absolute inset-0 bg-white/30 animate-pulse"></div>
+                  </div>
+                </div>
+                <p className="text-white/70 text-sm mt-2">Industry Leading Expertise</p>
+              </div>
+
+              {/* Satisfaction Rate */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-white font-semibold text-lg">Customer Satisfaction</span>
+                  <span className="text-secondary font-bold text-2xl">100%</span>
+                </div>
+                <div className="relative h-3 bg-white/20 rounded-full overflow-hidden">
+                  <div 
+                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full transition-all duration-1000 ease-out"
+                    style={{ width: '100%' }}
+                  >
+                    <div className="absolute inset-0 bg-white/30 animate-pulse"></div>
+                  </div>
+                </div>
+                <p className="text-white/70 text-sm mt-2">Guaranteed Quality Work</p>
+              </div>
+
+              {/* Happy Clients */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-white font-semibold text-lg">Happy Clients</span>
+                  <span className="text-secondary font-bold text-2xl">5000+</span>
+                </div>
+                <div className="relative h-3 bg-white/20 rounded-full overflow-hidden">
+                  <div 
+                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-400 to-purple-600 rounded-full transition-all duration-1000 ease-out"
+                    style={{ width: '98%' }}
+                  >
+                    <div className="absolute inset-0 bg-white/30 animate-pulse"></div>
+                  </div>
+                </div>
+                <p className="text-white/70 text-sm mt-2">Across Greater Toronto Area</p>
+              </div>
+            </div>
+
+            {/* Bottom Text */}
+            <div className="text-center mt-8 pt-6 border-t border-white/20">
+              <p className="text-white/90 text-sm md:text-base">
+                Join thousands of satisfied homeowners and businesses who trust Toronto Siding for their exterior needs
+              </p>
+            </div>
           </div>
         </div>
       </div>
