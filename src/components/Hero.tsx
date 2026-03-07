@@ -23,17 +23,16 @@ const Hero = () => {
             Transform your home's exterior with premium siding solutions. Licensed, insured, and trusted by thousands of Toronto homeowners.
           </p>
           <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-amber-dark text-base font-semibold px-8">
+            <Button asChild size="lg" className="bg-secondary text-white hover:bg-amber-dark text-base font-semibold px-8 shadow-lg">
               <Link to="/contact">
                 Get Free Estimate
                 <FaArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base font-semibold px-8">
-              <a href="tel:+16471234567">
-                <FaPhone className="mr-2 h-5 w-5" />
-                (647) 123-4567
-              </a>
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-secondary hover:text-white text-base font-semibold px-8 shadow-lg border-2 border-white hover:border-secondary transition-all duration-300">
+              <Link to="/contact">
+                Contact Us
+              </Link>
             </Button>
           </div>
         </div>

@@ -89,10 +89,6 @@ const Navbar = () => {
 
           {/* Right Side - Phone & CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+16471234567" className="flex items-center gap-2 text-[15px] font-semibold text-foreground">
-              <FaPhone className="h-4 w-4" />
-              (647) 123-4567
-            </a>
             <Button asChild className="bg-secondary text-white hover:bg-amber-dark font-semibold px-6 rounded-md">
               <Link to="/contact">Get Free Quote</Link>
             </Button>
@@ -153,10 +149,6 @@ const Navbar = () => {
               )
             )}
             <div className="px-4 pt-2 flex flex-col gap-3">
-              <a href="tel:+16471234567" className="flex items-center gap-2 text-[15px] font-semibold text-foreground">
-                <FaPhone className="h-4 w-4" />
-                (647) 123-4567
-              </a>
               <Button asChild className="bg-secondary text-white hover:bg-amber-dark w-full font-semibold">
                 <Link to="/contact" onClick={() => setMobileOpen(false)}>Get Free Quote</Link>
               </Button>
