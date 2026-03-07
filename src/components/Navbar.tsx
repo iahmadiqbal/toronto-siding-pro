@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { FaPhone } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
@@ -26,89 +27,94 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="sticky top-0 z-50 bg-card shadow-card">
-      <div className="container mx-auto flex items-center justify-between py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Toronto Siding" className="h-14 w-auto" />
-        </Link>
+    <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo and Brand */}
+          <Link to="/" className="flex items-center gap-2.5">
+            <img src={logo} alt="Toronto Siding" className="h-10 w-auto" />
+            <span className="text-xl font-bold text-primary tracking-tight whitespace-nowrap">Toronto Siding</span>
+          </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) =>
-            link.children ? (
-              <div key={link.name} className="relative group">
-                <button
-                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1 ${
-                    location.pathname.startsWith("/services")
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) =>
+              link.children ? (
+                <div key={link.name} className="relative group">
+                  <button
+                    className={`flex items-center gap-1 text-[15px] font-medium transition-colors ${
+                      location.pathname.startsWith("/services")
+                        ? "text-secondary"
+                        : "text-foreground hover:text-secondary"
+                    }`}
+                  >
+                    {link.name}
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                  <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[220px]">
+                      <Link
+                        to="/services"
+                        className="block px-4 py-2.5 text-[15px] text-foreground hover:bg-gray-50 hover:text-secondary transition-colors"
+                      >
+                        All Services
+                      </Link>
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.path}
+                          to={child.path}
+                          className="block px-4 py-2.5 text-[15px] text-foreground hover:bg-gray-50 hover:text-secondary transition-colors"
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`text-[15px] font-medium transition-colors ${
+                    location.pathname === link.path
                       ? "text-secondary"
                       : "text-foreground hover:text-secondary"
                   }`}
                 >
                   {link.name}
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-                <div className="absolute top-full left-0 pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-card rounded-lg shadow-card-hover border border-border p-2 min-w-[220px]">
-                    <Link
-                      to="/services"
-                      className="block px-4 py-2 text-sm rounded-md text-foreground hover:bg-muted hover:text-secondary transition-colors"
-                    >
-                      All Services
-                    </Link>
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.path}
-                        to={child.path}
-                        className="block px-4 py-2 text-sm rounded-md text-foreground hover:bg-muted hover:text-secondary transition-colors"
-                      >
-                        {child.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                  location.pathname === link.path
-                    ? "text-secondary"
-                    : "text-foreground hover:text-secondary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            )
-          )}
-        </div>
+                </Link>
+              )
+            )}
+          </div>
 
-        <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:+16471234567" className="flex items-center gap-2 text-sm font-semibold text-primary">
-            <Phone className="h-4 w-4" />
-            (647) 123-4567
-          </a>
-          <Button asChild className="bg-secondary text-secondary-foreground hover:bg-amber-dark">
-            <Link to="/contact">Get Free Quote</Link>
-          </Button>
-        </div>
+          {/* Right Side - Phone & CTA */}
+          <div className="hidden lg:flex items-center gap-4">
+            <a href="tel:+16471234567" className="flex items-center gap-2 text-[15px] font-semibold text-foreground">
+              <FaPhone className="h-4 w-4" />
+              (647) 123-4567
+            </a>
+            <Button asChild className="bg-secondary text-white hover:bg-amber-dark font-semibold px-6 rounded-md">
+              <Link to="/contact">Get Free Quote</Link>
+            </Button>
+          </div>
 
-        {/* Mobile toggle */}
-        <button className="lg:hidden p-2 text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+          {/* Mobile toggle */}
+          <button className="lg:hidden p-2 text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="lg:hidden bg-card border-t border-border pb-4">
-          <div className="container mx-auto flex flex-col gap-1 pt-2">
+        <div className="lg:hidden bg-white border-t border-gray-100 pb-4">
+          <div className="container mx-auto px-4 flex flex-col gap-1 pt-2">
             {navLinks.map((link) =>
               link.children ? (
                 <div key={link.name}>
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
-                    className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-foreground"
+                    className="w-full flex items-center justify-between px-4 py-3 text-[15px] font-medium text-foreground"
                   >
                     {link.name}
                     <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
@@ -118,7 +124,7 @@ const Navbar = () => {
                       <Link
                         to="/services"
                         onClick={() => setMobileOpen(false)}
-                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-secondary"
+                        className="block px-4 py-2 text-[15px] text-muted-foreground hover:text-secondary font-medium"
                       >
                         All Services
                       </Link>
@@ -127,7 +133,7 @@ const Navbar = () => {
                           key={child.path}
                           to={child.path}
                           onClick={() => setMobileOpen(false)}
-                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-secondary"
+                          className="block px-4 py-2 text-[15px] text-muted-foreground hover:text-secondary font-medium"
                         >
                           {child.name}
                         </Link>
@@ -140,18 +146,18 @@ const Navbar = () => {
                   key={link.name}
                   to={link.path}
                   onClick={() => setMobileOpen(false)}
-                  className="px-4 py-3 text-sm font-medium text-foreground hover:text-secondary"
+                  className="px-4 py-3 text-[15px] font-medium text-foreground hover:text-secondary"
                 >
                   {link.name}
                 </Link>
               )
             )}
-            <div className="px-4 pt-2 flex flex-col gap-2">
-              <a href="tel:+16471234567" className="flex items-center gap-2 text-sm font-semibold text-primary">
-                <Phone className="h-4 w-4" />
+            <div className="px-4 pt-2 flex flex-col gap-3">
+              <a href="tel:+16471234567" className="flex items-center gap-2 text-[15px] font-semibold text-foreground">
+                <FaPhone className="h-4 w-4" />
                 (647) 123-4567
               </a>
-              <Button asChild className="bg-secondary text-secondary-foreground hover:bg-amber-dark w-full">
+              <Button asChild className="bg-secondary text-white hover:bg-amber-dark w-full font-semibold">
                 <Link to="/contact" onClick={() => setMobileOpen(false)}>Get Free Quote</Link>
               </Button>
             </div>
