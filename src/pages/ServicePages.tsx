@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
-import { Check, Shield, Clock, Award, Hammer, Home, Sparkles, Layers, TreePine, Building2 } from "lucide-react";
+import { Check, Shield, Clock, Award, Hammer, Home, Sparkles, Layers, TreePine, Building2, Wrench, AlertTriangle, Zap, Phone, FileText, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -464,24 +464,254 @@ export const SidingInstallation = () => (
 );
 
 export const SidingRepair = () => (
-  <ServicePageLayout
-    title="Siding Repair & Replacement"
-    subtitle="Fast, reliable siding repair services across the GTA"
-    description={[
-      "Damaged or aging siding can compromise your home's protection and curb appeal. Our repair team quickly diagnoses issues and provides cost-effective solutions to restore your siding.",
-      "Whether it's storm damage, moisture issues, or general wear and tear, we have the expertise to fix it. We match existing materials and colors for a seamless repair.",
-    ]}
-    features={[
-      "Emergency repair services",
-      "Storm damage assessment",
-      "Color & material matching",
-      "Moisture damage repair",
-      "Partial panel replacement",
-      "Full siding replacement",
-      "Insurance claim assistance",
-      "Same-day estimates",
-    ]}
-  />
+  <div className="min-h-screen">
+    <Navbar />
+    
+    {/* Hero Section with Background Image */}
+    <section className="relative py-32 overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=2069&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80"></div>
+      </div>
+      <div className="container mx-auto text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">Siding Repair & Replacement</h1>
+        <p className="text-primary-foreground/90 max-w-2xl mx-auto text-lg md:text-xl">Fast, reliable siding repair services across the GTA</p>
+      </div>
+    </section>
+
+    {/* Main Description */}
+    <section className="py-20 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          Damaged or aging siding can compromise your home's protection and curb appeal. Our repair team quickly diagnoses issues and provides cost-effective solutions to restore your siding.
+        </p>
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          Whether it's storm damage, moisture issues, or general wear and tear, we have the expertise to fix it. We match existing materials and colors for a seamless repair.
+        </p>
+      </div>
+    </section>
+
+    {/* Common Siding Problems We Fix */}
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Expert Solutions</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Common Siding Problems We Fix</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">From minor repairs to complete replacements, we handle it all</p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-red-500/10 flex items-center justify-center mx-auto mb-4">
+                <AlertTriangle className="h-8 w-8 text-red-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Storm Damage</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                Wind, hail, and debris damage from severe weather conditions requiring immediate attention.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
+                <Layers className="h-8 w-8 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Cracked Panels</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                Broken or cracked siding panels that compromise your home's weather protection.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-purple-500/10 flex items-center justify-center mx-auto mb-4">
+                <Wrench className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Loose Siding</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                Panels that have come loose or detached, creating gaps and potential water entry.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-amber-500/10 flex items-center justify-center mx-auto mb-4">
+                <AlertTriangle className="h-8 w-8 text-amber-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Water Damage</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                Moisture infiltration causing rot, mold, and structural issues behind the siding.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-4">
+                <Sparkles className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Fading & Discoloration</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                UV damage and weathering causing unsightly color changes and reduced curb appeal.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-slate-500/10 flex items-center justify-center mx-auto mb-4">
+                <Building2 className="h-8 w-8 text-slate-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Warping & Buckling</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                Heat and moisture causing panels to warp, buckle, or become misaligned.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* Our Repair Process */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Fast & Efficient</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Our Repair Process</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Quick turnaround without compromising quality</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="relative">
+            <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-full border-2 border-secondary/20">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <Phone className="h-6 w-6 text-secondary-foreground" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center font-bold text-lg">
+                  1
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Contact & Assessment</h3>
+              <p className="text-muted-foreground">
+                Call us for emergency or scheduled service. We provide same-day estimates and quick response times for urgent repairs.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative md:mt-8">
+            <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-full border-2 border-secondary/20">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <FileText className="h-6 w-6 text-secondary-foreground" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center font-bold text-lg">
+                  2
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Diagnosis & Quote</h3>
+              <p className="text-muted-foreground">
+                Our experts inspect the damage, identify the root cause, and provide a detailed quote with repair options.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-full border-2 border-secondary/20">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <Wrench className="h-6 w-6 text-secondary-foreground" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center font-bold text-lg">
+                  3
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Expert Repair</h3>
+              <p className="text-muted-foreground">
+                We complete the repair with precision, matching materials and colors perfectly for a seamless finish.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Why Choose Our Repair Service */}
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose Our Repair Service</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="flex items-start gap-4 bg-background p-6 rounded-xl shadow-md">
+            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+              <Zap className="h-6 w-6 text-secondary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Emergency Services Available</h3>
+              <p className="text-muted-foreground text-sm">24/7 emergency response for urgent repairs that can't wait.</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-background p-6 rounded-xl shadow-md">
+            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+              <Sparkles className="h-6 w-6 text-secondary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Perfect Color Matching</h3>
+              <p className="text-muted-foreground text-sm">We match your existing siding color and texture for invisible repairs.</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-background p-6 rounded-xl shadow-md">
+            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+              <DollarSign className="h-6 w-6 text-secondary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Insurance Claim Assistance</h3>
+              <p className="text-muted-foreground text-sm">We help you navigate insurance claims for storm and weather damage.</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-background p-6 rounded-xl shadow-md">
+            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+              <Clock className="h-6 w-6 text-secondary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Same-Day Estimates</h3>
+              <p className="text-muted-foreground text-sm">Fast quotes so you can make informed decisions quickly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <div className="text-center bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-12 shadow-xl text-primary-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Need Siding Repair?</h2>
+          <p className="text-primary-foreground/90 mb-8 text-lg max-w-2xl mx-auto">
+            Don't let damaged siding compromise your home's protection. Get a free estimate today and restore your home's beauty and safety.
+          </p>
+          <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-amber-dark px-10 py-6 text-lg shadow-lg">
+            <Link to="/contact">Get Free Estimate</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
 );
 
 export const ResidentialSiding = () => (
