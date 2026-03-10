@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
-import { Check, Shield, Clock, Award, Hammer, Home, Sparkles, Layers, TreePine, Building2, Wrench, AlertTriangle, Zap, Phone, FileText, DollarSign, Heart, Users, Palette, TrendingUp, Leaf, Volume2, Star, ThumbsUp } from "lucide-react";
+import { Check, Shield, Clock, Award, Hammer, Home, Sparkles, Layers, TreePine, Building2, Wrench, AlertTriangle, Zap, Phone, FileText, DollarSign, Heart, Users, Palette, TrendingUp, Leaf, Volume2, Star, ThumbsUp, Briefcase, Factory, Store, Building, ClipboardCheck, Calendar, Headphones, BadgeCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -1200,22 +1200,299 @@ export const ResidentialSiding = () => (
 );
 
 export const CommercialSiding = () => (
-  <ServicePageLayout
-    title="Commercial Siding"
-    subtitle="Professional siding solutions for commercial properties"
-    description={[
-      "First impressions matter for your business. Our commercial siding services deliver professional-grade exterior cladding for offices, retail spaces, warehouses, and multi-unit residential buildings.",
-      "We understand the unique requirements of commercial projects including timelines, budgets, and building codes. Our team works efficiently to minimize disruption to your business operations.",
-    ]}
-    features={[
-      "Office buildings",
-      "Retail storefronts",
-      "Warehouse & industrial",
-      "Multi-unit residential",
-      "Code compliance",
-      "Minimal business disruption",
-      "Project management",
-      "Commercial warranties",
-    ]}
-  />
+  <div className="min-h-screen">
+    <Navbar />
+    
+    {/* Hero Section with Background Image */}
+    <section className="relative py-32 overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80"></div>
+      </div>
+      <div className="container mx-auto text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">Commercial Siding</h1>
+        <p className="text-primary-foreground/90 max-w-2xl mx-auto text-lg md:text-xl">Professional siding solutions for commercial properties</p>
+      </div>
+    </section>
+
+    {/* Main Description */}
+    <section className="py-20 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          First impressions matter for your business. Our commercial siding services deliver professional-grade exterior cladding for offices, retail spaces, warehouses, and multi-unit residential buildings.
+        </p>
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          We understand the unique requirements of commercial projects including timelines, budgets, and building codes. Our team works efficiently to minimize disruption to your business operations.
+        </p>
+      </div>
+    </section>
+
+    {/* Commercial Property Types */}
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Our Expertise</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Commercial Properties We Serve</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Professional siding solutions for every type of commercial building</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card className="border-none shadow-lg hover:shadow-2xl transition-all group">
+            <CardContent className="pt-8 pb-6 text-center">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <Briefcase className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Office Buildings</h3>
+              <p className="text-muted-foreground text-sm">
+                Professional exteriors for corporate offices and business centers
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-2xl transition-all group">
+            <CardContent className="pt-8 pb-6 text-center">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <Store className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Retail Storefronts</h3>
+              <p className="text-muted-foreground text-sm">
+                Eye-catching facades that attract customers and boost brand image
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-2xl transition-all group">
+            <CardContent className="pt-8 pb-6 text-center">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <Factory className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Warehouse & Industrial</h3>
+              <p className="text-muted-foreground text-sm">
+                Durable solutions for warehouses, factories, and industrial facilities
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-2xl transition-all group">
+            <CardContent className="pt-8 pb-6 text-center">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <Building className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Multi-Unit Residential</h3>
+              <p className="text-muted-foreground text-sm">
+                Large-scale projects for apartment complexes and condominiums
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* Why Choose Us for Commercial */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Commercial Advantages</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Why Businesses Choose Us</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Specialized expertise for commercial projects</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary to-amber-600 flex items-center justify-center shrink-0 shadow-md">
+              <ClipboardCheck className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Code Compliance Experts</h3>
+              <p className="text-muted-foreground text-sm">
+                We ensure all work meets local building codes, fire safety regulations, and commercial standards for hassle-free inspections.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shrink-0 shadow-md">
+              <Calendar className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Flexible Scheduling</h3>
+              <p className="text-muted-foreground text-sm">
+                We work around your business hours, including evenings and weekends, to minimize disruption to your operations.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shrink-0 shadow-md">
+              <Users className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Dedicated Project Manager</h3>
+              <p className="text-muted-foreground text-sm">
+                Single point of contact who coordinates all aspects of your project, keeping you informed every step of the way.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shrink-0 shadow-md">
+              <BadgeCheck className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Commercial Warranties</h3>
+              <p className="text-muted-foreground text-sm">
+                Extended warranty coverage designed for commercial properties with comprehensive protection for your investment.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shrink-0 shadow-md">
+              <Zap className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Fast Turnaround</h3>
+              <p className="text-muted-foreground text-sm">
+                Efficient crews and streamlined processes ensure your project is completed on time and within budget.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shrink-0 shadow-md">
+              <Headphones className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">24/7 Support</h3>
+              <p className="text-muted-foreground text-sm">
+                Emergency response team available around the clock for urgent repairs and maintenance needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Project Process */}
+    <section className="py-16 bg-gradient-to-br from-muted/50 to-muted/20">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Our Process</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Commercial Project Workflow</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Streamlined process for efficient project delivery</p>
+        </div>
+
+        <div className="relative">
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-secondary to-secondary opacity-20 -translate-y-1/2"></div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 relative">
+            <div className="text-center">
+              <div className="relative inline-block mb-4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-secondary to-amber-600 flex items-center justify-center mx-auto shadow-xl">
+                  <Phone className="h-12 w-12 text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                  1
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Initial Consultation</h3>
+              <p className="text-muted-foreground text-sm">
+                Discuss project scope, timeline, and budget requirements
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="relative inline-block mb-4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto shadow-xl">
+                  <FileText className="h-12 w-12 text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                  2
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Site Assessment</h3>
+              <p className="text-muted-foreground text-sm">
+                Detailed inspection and measurements of your property
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="relative inline-block mb-4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto shadow-xl">
+                  <ClipboardCheck className="h-12 w-12 text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                  3
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Proposal & Approval</h3>
+              <p className="text-muted-foreground text-sm">
+                Detailed quote with materials, timeline, and terms
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="relative inline-block mb-4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto shadow-xl">
+                  <Hammer className="h-12 w-12 text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                  4
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Installation</h3>
+              <p className="text-muted-foreground text-sm">
+                Professional installation with minimal business disruption
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="relative inline-block mb-4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mx-auto shadow-xl">
+                  <BadgeCheck className="h-12 w-12 text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                  5
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Final Inspection</h3>
+              <p className="text-muted-foreground text-sm">
+                Quality check and walkthrough with project manager
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section className="py-20 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <div className="bg-gradient-to-br from-primary via-primary to-primary/90 rounded-3xl p-12 shadow-2xl text-center text-primary-foreground relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid-white/10"></div>
+          <div className="relative z-10">
+            <Building2 className="h-16 w-16 mx-auto mb-6 text-secondary" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Upgrade Your Commercial Property?</h2>
+            <p className="text-primary-foreground/90 mb-8 text-lg max-w-2xl mx-auto">
+              Get a free commercial estimate today. Our team specializes in large-scale projects with minimal disruption to your business.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-amber-dark px-10 py-6 text-lg shadow-lg">
+                <Link to="/contact">Request Commercial Quote</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 px-10 py-6 text-lg shadow-lg border-0">
+                <Link to="/contact">Schedule Site Visit</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
 );
