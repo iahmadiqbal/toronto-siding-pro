@@ -1,10 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
-import { Check, Shield, Clock, Award, Hammer, Home, Sparkles, Layers, TreePine, Building2, Wrench, AlertTriangle, Zap, Phone, FileText, DollarSign } from "lucide-react";
+import { Check, Shield, Clock, Award, Hammer, Home, Sparkles, Layers, TreePine, Building2, Wrench, AlertTriangle, Zap, Phone, FileText, DollarSign, Heart, Users, Palette, TrendingUp, Leaf, Volume2, Star, ThumbsUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface ServicePageProps {
   title: string;
@@ -715,24 +716,487 @@ export const SidingRepair = () => (
 );
 
 export const ResidentialSiding = () => (
-  <ServicePageLayout
-    title="Residential Siding"
-    subtitle="Transform your home's exterior with beautiful new siding"
-    description={[
-      "Your home deserves the best protection and aesthetic appeal. Our residential siding services cover everything from single-family homes to townhouses and condos across the Greater Toronto Area.",
-      "We help homeowners choose the perfect siding material, color, and style to complement their home's architecture while maximizing energy efficiency and weather resistance.",
-    ]}
-    features={[
-      "Single-family homes",
-      "Townhouses & semis",
-      "Custom color matching",
-      "Energy-efficient options",
-      "Noise reduction solutions",
-      "Curb appeal design",
-      "HOA compliance",
-      "Financing available",
-    ]}
-  />
+  <div className="min-h-screen">
+    <Navbar />
+    
+    {/* Hero Section with Background Image */}
+    <section className="relative py-32 overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80"></div>
+      </div>
+      <div className="container mx-auto text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">Residential Siding</h1>
+        <p className="text-primary-foreground/90 max-w-2xl mx-auto text-lg md:text-xl">Transform your home's exterior with beautiful new siding</p>
+      </div>
+    </section>
+
+    {/* Main Description */}
+    <section className="py-20 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          Your home deserves the best protection and aesthetic appeal. Our residential siding services cover everything from single-family homes to townhouses and condos across the Greater Toronto Area.
+        </p>
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          We help homeowners choose the perfect siding material, color, and style to complement your home's architecture while maximizing energy efficiency and weather resistance.
+        </p>
+      </div>
+    </section>
+
+    {/* Property Types We Serve */}
+    <section className="py-16 bg-gradient-to-br from-muted/50 to-muted/20">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">We Serve All Home Types</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Residential Properties We Transform</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Expert siding solutions for every type of home</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card className="border-none shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+            <div 
+              className="h-56 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-2xl font-bold text-white mb-2">Single-Family Homes</h3>
+                <p className="text-white/90 text-sm">Complete exterior transformations for detached homes</p>
+              </div>
+            </div>
+            <CardContent className="pt-6 pb-6">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Custom design consultation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Full exterior coverage</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Architectural style matching</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+            <div 
+              className="h-56 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-2xl font-bold text-white mb-2">Townhouses & Semis</h3>
+                <p className="text-white/90 text-sm">Specialized solutions for attached properties</p>
+              </div>
+            </div>
+            <CardContent className="pt-6 pb-6">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">HOA compliance expertise</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Neighbor coordination</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Shared wall considerations</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+            <div 
+              className="h-56 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-2xl font-bold text-white mb-2">Condos & Apartments</h3>
+                <p className="text-white/90 text-sm">Multi-unit residential siding projects</p>
+              </div>
+            </div>
+            <CardContent className="pt-6 pb-6">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Building board approval</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Minimal resident disruption</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Uniform appearance standards</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+            <div 
+              className="h-56 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-2xl font-bold text-white mb-2">Heritage Homes</h3>
+                <p className="text-white/90 text-sm">Preserving character while upgrading protection</p>
+              </div>
+            </div>
+            <CardContent className="pt-6 pb-6">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Period-appropriate materials</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Historical accuracy</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Heritage permit assistance</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* Benefits for Homeowners */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Homeowner Benefits</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Why Homeowners Choose Us</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">More than just beautiful siding</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <TrendingUp className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Increase Home Value</h3>
+            <p className="text-muted-foreground">
+              New siding can increase your home's resale value by up to 80% of the project cost.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Leaf className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Energy Efficiency</h3>
+            <p className="text-muted-foreground">
+              Modern insulated siding reduces heating and cooling costs by improving thermal performance.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Volume2 className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Noise Reduction</h3>
+            <p className="text-muted-foreground">
+              Quality siding acts as a sound barrier, reducing outside noise for a quieter home.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Palette className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Curb Appeal</h3>
+            <p className="text-muted-foreground">
+              Transform your home's appearance with modern colors and styles that reflect your taste.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Shield className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Weather Protection</h3>
+            <p className="text-muted-foreground">
+              Protect your home from rain, snow, wind, and UV damage with durable exterior cladding.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Heart className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Low Maintenance</h3>
+            <p className="text-muted-foreground">
+              Spend less time on upkeep with modern siding that never needs painting or staining.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Customer Testimonials */}
+    <section className="py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">What Homeowners Say</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Trusted by Toronto Homeowners</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">See what our satisfied customers have to say about their experience</p>
+        </div>
+
+        <Carousel className="w-full max-w-5xl mx-auto">
+          <CarouselContent>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "Absolutely thrilled with our new siding! The team was professional, efficient, and the quality is outstanding. Our home looks brand new."
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-secondary to-amber-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">Sarah M.</p>
+                        <p className="text-sm text-muted-foreground">North York</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "Great experience from start to finish. They helped us choose the perfect color and the installation was flawless. Highly recommend!"
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">Michael T.</p>
+                        <p className="text-sm text-muted-foreground">Scarborough</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "Best investment we made in our home. The energy savings alone make it worth it, plus it looks amazing. Very happy with the results!"
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">Jennifer L.</p>
+                        <p className="text-sm text-muted-foreground">Etobicoke</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "The crew was amazing! They completed the job on time and cleaned up perfectly. Our neighbors keep asking who did our siding!"
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">David K.</p>
+                        <p className="text-sm text-muted-foreground">Mississauga</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "Professional service from quote to completion. They matched our existing siding perfectly for the repair. You can't even tell where the new panels are!"
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">Lisa P.</p>
+                        <p className="text-sm text-muted-foreground">Markham</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "Excellent workmanship and fair pricing. They took the time to explain all our options and helped us make the best choice for our budget."
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">Robert H.</p>
+                        <p className="text-sm text-muted-foreground">Vaughan</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
+      </div>
+    </section>
+
+    {/* Financing & CTA */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Flexible Options</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">Financing Available</h2>
+            <p className="text-muted-foreground mb-6 text-lg">
+              Don't let budget concerns delay your home improvement project. We offer flexible financing options to make your dream exterior affordable.
+            </p>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <DollarSign className="h-5 w-5 text-secondary-foreground" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-1">Competitive Rates</h4>
+                  <p className="text-muted-foreground text-sm">Low-interest financing plans available</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <ThumbsUp className="h-5 w-5 text-secondary-foreground" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-1">Quick Approval</h4>
+                  <p className="text-muted-foreground text-sm">Fast application process with instant decisions</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <Clock className="h-5 w-5 text-secondary-foreground" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-1">Flexible Terms</h4>
+                  <p className="text-muted-foreground text-sm">Payment plans that fit your budget</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-10 shadow-xl text-primary-foreground">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Home?</h3>
+            <p className="text-primary-foreground/90 mb-6 text-lg">
+              Get a free consultation and quote today. Our experts will help you choose the perfect siding for your home.
+            </p>
+            <Button asChild size="lg" className="w-full bg-secondary text-secondary-foreground hover:bg-amber-dark py-6 text-lg shadow-lg">
+              <Link to="/contact">Schedule Free Consultation</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
 );
 
 export const CommercialSiding = () => (
