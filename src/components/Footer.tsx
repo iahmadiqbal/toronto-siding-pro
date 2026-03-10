@@ -19,13 +19,36 @@ const Footer = () => {
           <div>
             <h4 className="text-primary-foreground font-semibold text-base mb-4 tracking-tight">Services</h4>
             <ul className="space-y-2.5">
-              {["Vinyl Siding", "Cedar Siding", "Fiber Cement Siding", "Siding Repair", "Soffit & Fascia", "Gutter Installation"].map((s) => (
-                <li key={s}>
-                  <Link to="/services" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
-                    {s}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/services/siding-installation" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                  Vinyl Siding
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/siding-installation" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                  Cedar Siding
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/siding-installation" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                  Fiber Cement Siding
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/siding-repair" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                  Siding Repair
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                  Soffit & Fascia
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                  Gutter Installation
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
