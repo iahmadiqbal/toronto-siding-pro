@@ -1,9 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
-import { Check } from "lucide-react";
+import { Check, Shield, Clock, Award, Hammer, Home, Sparkles, Layers, TreePine, Building2, Wrench, AlertTriangle, Zap, Phone, FileText, DollarSign, Heart, Users, Palette, TrendingUp, Leaf, Volume2, Star, ThumbsUp, Briefcase, Factory, Store, Building, ClipboardCheck, Calendar, Headphones, BadgeCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface ServicePageProps {
   title: string;
@@ -52,85 +54,1445 @@ const ServicePageLayout = ({ title, subtitle, description, features }: ServicePa
 );
 
 export const SidingInstallation = () => (
-  <ServicePageLayout
-    title="Siding Installation"
-    subtitle="Professional siding installation for homes and businesses"
-    description={[
-      "Our expert team provides top-quality siding installation using premium materials including vinyl, cedar, and fiber cement. We handle everything from initial consultation to final cleanup.",
-      "Every installation begins with a thorough inspection of your property, followed by precise measurements and material selection. Our licensed professionals ensure a perfect fit and finish that will protect your home for decades.",
-    ]}
-    features={[
-      "Free on-site consultation",
-      "Premium material selection",
-      "Professional installation crew",
-      "Weather barrier installation",
-      "Trim & finishing work",
-      "Complete site cleanup",
-      "Manufacturer warranty",
-      "Workmanship guarantee",
-    ]}
-  />
+  <div className="min-h-screen">
+    <Navbar />
+    
+    {/* Hero Section with Background Image */}
+    <section className="relative py-32 overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80"></div>
+      </div>
+      <div className="container mx-auto text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">Siding Installation</h1>
+        <p className="text-primary-foreground/90 max-w-2xl mx-auto text-lg md:text-xl">Professional siding installation for homes and businesses</p>
+      </div>
+    </section>
+
+    {/* Main Description */}
+    <section className="py-20 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          Our expert team provides top-quality siding installation using premium materials including vinyl, cedar, and fiber cement. We handle everything from initial consultation to final cleanup.
+        </p>
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          Every installation begins with a thorough inspection of your property, followed by precise measurements and material selection. Our licensed professionals ensure a perfect fit and finish that will protect your home for decades.
+        </p>
+      </div>
+    </section>
+
+    {/* Why Choose Our Installation Service */}
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose Our Installation Service</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">We deliver excellence in every aspect of siding installation</p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+            <CardContent className="pt-8 text-center">
+              <div className="w-16 h-16 rounded-full gradient-amber flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-secondary-foreground" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Quality Guaranteed</h3>
+              <p className="text-muted-foreground">
+                We use only premium materials and provide comprehensive warranties on both materials and workmanship for your peace of mind.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+            <CardContent className="pt-8 text-center">
+              <div className="w-16 h-16 rounded-full gradient-amber flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-secondary-foreground" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">On-Time Completion</h3>
+              <p className="text-muted-foreground">
+                We respect your time and schedule. Our efficient team completes projects on time without compromising quality or attention to detail.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+            <CardContent className="pt-8 text-center">
+              <div className="w-16 h-16 rounded-full gradient-amber flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8 text-secondary-foreground" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Expert Craftsmen</h3>
+              <p className="text-muted-foreground">
+                Our licensed and insured professionals have years of experience, ensuring flawless installation that stands the test of time.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* Installation Process */}
+    <section className="py-20 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"></div>
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="text-center mb-16">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">How We Work</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Our Installation Process</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">A seamless journey from consultation to completion</p>
+        </div>
+
+        <div className="relative">
+          {/* Connecting Line */}
+          <div className="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-secondary to-secondary opacity-20" style={{ top: '80px' }}></div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Step 1 */}
+            <div className="relative">
+              <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-secondary/30 h-full">
+                <div className="flex flex-col items-center text-center">
+                  <div className="relative mb-6">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary to-amber-600 flex items-center justify-center shadow-lg">
+                      <Home className="h-10 w-10 text-white" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full gradient-amber flex items-center justify-center text-secondary-foreground font-bold text-lg shadow-md">
+                      1
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Free Consultation</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    We visit your property, assess your needs, and provide expert recommendations tailored to your home's unique requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative lg:mt-12">
+              <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-secondary/30 h-full">
+                <div className="flex flex-col items-center text-center">
+                  <div className="relative mb-6">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary to-amber-600 flex items-center justify-center shadow-lg">
+                      <Sparkles className="h-10 w-10 text-white" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full gradient-amber flex items-center justify-center text-secondary-foreground font-bold text-lg shadow-md">
+                      2
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Material Selection</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Choose from our wide range of premium siding materials, colors, and styles that perfectly match your vision and budget.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative">
+              <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-secondary/30 h-full">
+                <div className="flex flex-col items-center text-center">
+                  <div className="relative mb-6">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary to-amber-600 flex items-center justify-center shadow-lg">
+                      <Hammer className="h-10 w-10 text-white" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full gradient-amber flex items-center justify-center text-secondary-foreground font-bold text-lg shadow-md">
+                      3
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Professional Installation</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Our skilled team installs your siding with precision, ensuring perfect alignment, weatherproofing, and lasting quality.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="relative lg:mt-12">
+              <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-secondary/30 h-full">
+                <div className="flex flex-col items-center text-center">
+                  <div className="relative mb-6">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary to-amber-600 flex items-center justify-center shadow-lg">
+                      <Check className="h-10 w-10 text-white" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full gradient-amber flex items-center justify-center text-secondary-foreground font-bold text-lg shadow-md">
+                      4
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Final Inspection</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    We conduct a thorough walkthrough, ensure your complete satisfaction, and leave your property spotless.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Siding Material Options */}
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Premium Siding Materials</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Choose the perfect material for your home's protection and beauty</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="border-none shadow-lg overflow-hidden">
+            <div 
+              className="h-48 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=2070&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20 flex items-end justify-center pb-4">
+                <p className="text-xl font-bold text-white">Vinyl Siding</p>
+              </div>
+            </div>
+            <CardContent className="pt-6">
+              <h3 className="text-xl font-bold text-foreground mb-3">Vinyl Siding</h3>
+              <p className="text-muted-foreground mb-4">
+                Durable, low-maintenance, and cost-effective. Available in a wide range of colors and styles.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2 text-sm">
+                  <Check className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
+                  <span>Weather resistant</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <Check className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
+                  <span>Never needs painting</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <Check className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
+                  <span>Energy efficient</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg overflow-hidden">
+            <div 
+              className="h-48 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20 flex items-end justify-center pb-4">
+                <p className="text-xl font-bold text-white">Cedar Siding</p>
+              </div>
+            </div>
+            <CardContent className="pt-6">
+              <h3 className="text-xl font-bold text-foreground mb-3">Cedar Siding</h3>
+              <p className="text-muted-foreground mb-4">
+                Natural beauty and timeless elegance. Perfect for traditional and modern homes alike.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2 text-sm">
+                  <Check className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
+                  <span>Natural insulation</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <Check className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
+                  <span>Unique wood grain</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <Check className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
+                  <span>Eco-friendly option</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg overflow-hidden">
+            <div 
+              className="h-48 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20 flex items-end justify-center pb-4">
+                <p className="text-xl font-bold text-white">Fiber Cement</p>
+              </div>
+            </div>
+            <CardContent className="pt-6">
+              <h3 className="text-xl font-bold text-foreground mb-3">Fiber Cement</h3>
+              <p className="text-muted-foreground mb-4">
+                Maximum durability and fire resistance. Mimics wood appearance without the maintenance.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2 text-sm">
+                  <Check className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
+                  <span>Fire resistant</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <Check className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
+                  <span>Pest proof</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <Check className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
+                  <span>50+ year lifespan</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* What's Included */}
+    <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-16">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Complete Package</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">What's Included in Every Installation</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">Comprehensive service from start to finish with no hidden costs</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="bg-background rounded-xl p-8 shadow-lg border-l-4 border-secondary hover:shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 rounded-xl gradient-amber flex items-center justify-center shrink-0">
+                <Shield className="h-7 w-7 text-secondary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Free On-Site Consultation</h3>
+                <p className="text-muted-foreground">Our experts visit your property to assess your needs and provide personalized recommendations at no cost.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-xl p-8 shadow-lg border-l-4 border-secondary hover:shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 rounded-xl gradient-amber flex items-center justify-center shrink-0">
+                <Sparkles className="h-7 w-7 text-secondary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Premium Material Selection</h3>
+                <p className="text-muted-foreground">Choose from our extensive range of high-quality materials in various colors, styles, and finishes.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-xl p-8 shadow-lg border-l-4 border-secondary hover:shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 rounded-xl gradient-amber flex items-center justify-center shrink-0">
+                <Award className="h-7 w-7 text-secondary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Professional Installation Crew</h3>
+                <p className="text-muted-foreground">Licensed, insured, and experienced professionals handle your project with precision and care.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-xl p-8 shadow-lg border-l-4 border-secondary hover:shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 rounded-xl gradient-amber flex items-center justify-center shrink-0">
+                <Shield className="h-7 w-7 text-secondary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Weather Barrier Installation</h3>
+                <p className="text-muted-foreground">Complete moisture protection system to safeguard your home from the elements year-round.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-xl p-8 shadow-lg border-l-4 border-secondary hover:shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 rounded-xl gradient-amber flex items-center justify-center shrink-0">
+                <Hammer className="h-7 w-7 text-secondary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Trim & Finishing Work</h3>
+                <p className="text-muted-foreground">Meticulous attention to detail with perfect edges, corners, and finishing touches throughout.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-xl p-8 shadow-lg border-l-4 border-secondary hover:shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 rounded-xl gradient-amber flex items-center justify-center shrink-0">
+                <Sparkles className="h-7 w-7 text-secondary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Complete Site Cleanup</h3>
+                <p className="text-muted-foreground">We leave your property spotless, removing all debris and materials when the job is complete.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-xl p-8 shadow-lg border-l-4 border-secondary hover:shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 rounded-xl gradient-amber flex items-center justify-center shrink-0">
+                <Shield className="h-7 w-7 text-secondary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Manufacturer Warranty</h3>
+                <p className="text-muted-foreground">Full material coverage included with comprehensive manufacturer warranties for peace of mind.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-xl p-8 shadow-lg border-l-4 border-secondary hover:shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 rounded-xl gradient-amber flex items-center justify-center shrink-0">
+                <Award className="h-7 w-7 text-secondary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Workmanship Guarantee</h3>
+                <p className="text-muted-foreground">Our quality installation is backed by our workmanship guarantee for your complete satisfaction.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center bg-background rounded-2xl p-10 shadow-xl">
+          <h3 className="text-2xl font-bold text-foreground mb-4">Ready to Get Started?</h3>
+          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Contact us today for a free consultation and quote. Transform your home with professional siding installation.</p>
+          <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-amber-dark px-10 py-6 text-lg shadow-lg">
+            <Link to="/contact">Get a Free Quote</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
 );
 
 export const SidingRepair = () => (
-  <ServicePageLayout
-    title="Siding Repair & Replacement"
-    subtitle="Fast, reliable siding repair services across the GTA"
-    description={[
-      "Damaged or aging siding can compromise your home's protection and curb appeal. Our repair team quickly diagnoses issues and provides cost-effective solutions to restore your siding.",
-      "Whether it's storm damage, moisture issues, or general wear and tear, we have the expertise to fix it. We match existing materials and colors for a seamless repair.",
-    ]}
-    features={[
-      "Emergency repair services",
-      "Storm damage assessment",
-      "Color & material matching",
-      "Moisture damage repair",
-      "Partial panel replacement",
-      "Full siding replacement",
-      "Insurance claim assistance",
-      "Same-day estimates",
-    ]}
-  />
+  <div className="min-h-screen">
+    <Navbar />
+    
+    {/* Hero Section with Background Image */}
+    <section className="relative py-32 overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=2069&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80"></div>
+      </div>
+      <div className="container mx-auto text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">Siding Repair & Replacement</h1>
+        <p className="text-primary-foreground/90 max-w-2xl mx-auto text-lg md:text-xl">Fast, reliable siding repair services across the GTA</p>
+      </div>
+    </section>
+
+    {/* Main Description */}
+    <section className="py-20 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          Damaged or aging siding can compromise your home's protection and curb appeal. Our repair team quickly diagnoses issues and provides cost-effective solutions to restore your siding.
+        </p>
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          Whether it's storm damage, moisture issues, or general wear and tear, we have the expertise to fix it. We match existing materials and colors for a seamless repair.
+        </p>
+      </div>
+    </section>
+
+    {/* Common Siding Problems We Fix */}
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Expert Solutions</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Common Siding Problems We Fix</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">From minor repairs to complete replacements, we handle it all</p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-red-500/10 flex items-center justify-center mx-auto mb-4">
+                <AlertTriangle className="h-8 w-8 text-red-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Storm Damage</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                Wind, hail, and debris damage from severe weather conditions requiring immediate attention.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
+                <Layers className="h-8 w-8 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Cracked Panels</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                Broken or cracked siding panels that compromise your home's weather protection.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-purple-500/10 flex items-center justify-center mx-auto mb-4">
+                <Wrench className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Loose Siding</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                Panels that have come loose or detached, creating gaps and potential water entry.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-amber-500/10 flex items-center justify-center mx-auto mb-4">
+                <AlertTriangle className="h-8 w-8 text-amber-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Water Damage</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                Moisture infiltration causing rot, mold, and structural issues behind the siding.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-4">
+                <Sparkles className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Fading & Discoloration</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                UV damage and weathering causing unsightly color changes and reduced curb appeal.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all">
+            <CardContent className="pt-8 pb-6">
+              <div className="w-16 h-16 rounded-xl bg-slate-500/10 flex items-center justify-center mx-auto mb-4">
+                <Building2 className="h-8 w-8 text-slate-600" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2 text-center">Warping & Buckling</h3>
+              <p className="text-muted-foreground text-sm text-center">
+                Heat and moisture causing panels to warp, buckle, or become misaligned.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* Our Repair Process */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Fast & Efficient</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Our Repair Process</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Quick turnaround without compromising quality</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="relative">
+            <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-full border-2 border-secondary/20">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <Phone className="h-6 w-6 text-secondary-foreground" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center font-bold text-lg">
+                  1
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Contact & Assessment</h3>
+              <p className="text-muted-foreground">
+                Call us for emergency or scheduled service. We provide same-day estimates and quick response times for urgent repairs.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative md:mt-8">
+            <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-full border-2 border-secondary/20">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <FileText className="h-6 w-6 text-secondary-foreground" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center font-bold text-lg">
+                  2
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Diagnosis & Quote</h3>
+              <p className="text-muted-foreground">
+                Our experts inspect the damage, identify the root cause, and provide a detailed quote with repair options.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-full border-2 border-secondary/20">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <Wrench className="h-6 w-6 text-secondary-foreground" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center font-bold text-lg">
+                  3
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Expert Repair</h3>
+              <p className="text-muted-foreground">
+                We complete the repair with precision, matching materials and colors perfectly for a seamless finish.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Why Choose Our Repair Service */}
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose Our Repair Service</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="flex items-start gap-4 bg-background p-6 rounded-xl shadow-md">
+            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+              <Zap className="h-6 w-6 text-secondary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Emergency Services Available</h3>
+              <p className="text-muted-foreground text-sm">24/7 emergency response for urgent repairs that can't wait.</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-background p-6 rounded-xl shadow-md">
+            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+              <Sparkles className="h-6 w-6 text-secondary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Perfect Color Matching</h3>
+              <p className="text-muted-foreground text-sm">We match your existing siding color and texture for invisible repairs.</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-background p-6 rounded-xl shadow-md">
+            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+              <DollarSign className="h-6 w-6 text-secondary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Insurance Claim Assistance</h3>
+              <p className="text-muted-foreground text-sm">We help you navigate insurance claims for storm and weather damage.</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-background p-6 rounded-xl shadow-md">
+            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+              <Clock className="h-6 w-6 text-secondary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Same-Day Estimates</h3>
+              <p className="text-muted-foreground text-sm">Fast quotes so you can make informed decisions quickly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <div className="text-center bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-12 shadow-xl text-primary-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Need Siding Repair?</h2>
+          <p className="text-primary-foreground/90 mb-8 text-lg max-w-2xl mx-auto">
+            Don't let damaged siding compromise your home's protection. Get a free estimate today and restore your home's beauty and safety.
+          </p>
+          <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-amber-dark px-10 py-6 text-lg shadow-lg">
+            <Link to="/contact">Get Free Estimate</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
 );
 
 export const ResidentialSiding = () => (
-  <ServicePageLayout
-    title="Residential Siding"
-    subtitle="Transform your home's exterior with beautiful new siding"
-    description={[
-      "Your home deserves the best protection and aesthetic appeal. Our residential siding services cover everything from single-family homes to townhouses and condos across the Greater Toronto Area.",
-      "We help homeowners choose the perfect siding material, color, and style to complement their home's architecture while maximizing energy efficiency and weather resistance.",
-    ]}
-    features={[
-      "Single-family homes",
-      "Townhouses & semis",
-      "Custom color matching",
-      "Energy-efficient options",
-      "Noise reduction solutions",
-      "Curb appeal design",
-      "HOA compliance",
-      "Financing available",
-    ]}
-  />
+  <div className="min-h-screen">
+    <Navbar />
+    
+    {/* Hero Section with Background Image */}
+    <section className="relative py-32 overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80"></div>
+      </div>
+      <div className="container mx-auto text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">Residential Siding</h1>
+        <p className="text-primary-foreground/90 max-w-2xl mx-auto text-lg md:text-xl">Transform your home's exterior with beautiful new siding</p>
+      </div>
+    </section>
+
+    {/* Main Description */}
+    <section className="py-20 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          Your home deserves the best protection and aesthetic appeal. Our residential siding services cover everything from single-family homes to townhouses and condos across the Greater Toronto Area.
+        </p>
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          We help homeowners choose the perfect siding material, color, and style to complement your home's architecture while maximizing energy efficiency and weather resistance.
+        </p>
+      </div>
+    </section>
+
+    {/* Property Types We Serve */}
+    <section className="py-16 bg-gradient-to-br from-muted/50 to-muted/20">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">We Serve All Home Types</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Residential Properties We Transform</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Expert siding solutions for every type of home</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card className="border-none shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+            <div 
+              className="h-56 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-2xl font-bold text-white mb-2">Single-Family Homes</h3>
+                <p className="text-white/90 text-sm">Complete exterior transformations for detached homes</p>
+              </div>
+            </div>
+            <CardContent className="pt-6 pb-6">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Custom design consultation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Full exterior coverage</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Architectural style matching</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+            <div 
+              className="h-56 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-2xl font-bold text-white mb-2">Townhouses & Semis</h3>
+                <p className="text-white/90 text-sm">Specialized solutions for attached properties</p>
+              </div>
+            </div>
+            <CardContent className="pt-6 pb-6">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">HOA compliance expertise</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Neighbor coordination</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Shared wall considerations</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+            <div 
+              className="h-56 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-2xl font-bold text-white mb-2">Condos & Apartments</h3>
+                <p className="text-white/90 text-sm">Multi-unit residential siding projects</p>
+              </div>
+            </div>
+            <CardContent className="pt-6 pb-6">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Building board approval</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Minimal resident disruption</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Uniform appearance standards</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+            <div 
+              className="h-56 bg-cover bg-center relative"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop')"
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-2xl font-bold text-white mb-2">Heritage Homes</h3>
+                <p className="text-white/90 text-sm">Preserving character while upgrading protection</p>
+              </div>
+            </div>
+            <CardContent className="pt-6 pb-6">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Period-appropriate materials</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Historical accuracy</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-sm">Heritage permit assistance</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* Benefits for Homeowners */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Homeowner Benefits</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Why Homeowners Choose Us</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">More than just beautiful siding</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <TrendingUp className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Increase Home Value</h3>
+            <p className="text-muted-foreground">
+              New siding can increase your home's resale value by up to 80% of the project cost.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Leaf className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Energy Efficiency</h3>
+            <p className="text-muted-foreground">
+              Modern insulated siding reduces heating and cooling costs by improving thermal performance.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Volume2 className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Noise Reduction</h3>
+            <p className="text-muted-foreground">
+              Quality siding acts as a sound barrier, reducing outside noise for a quieter home.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Palette className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Curb Appeal</h3>
+            <p className="text-muted-foreground">
+              Transform your home's appearance with modern colors and styles that reflect your taste.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Shield className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Weather Protection</h3>
+            <p className="text-muted-foreground">
+              Protect your home from rain, snow, wind, and UV damage with durable exterior cladding.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Heart className="h-10 w-10 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Low Maintenance</h3>
+            <p className="text-muted-foreground">
+              Spend less time on upkeep with modern siding that never needs painting or staining.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Customer Testimonials */}
+    <section className="py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">What Homeowners Say</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Trusted by Toronto Homeowners</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">See what our satisfied customers have to say about their experience</p>
+        </div>
+
+        <Carousel className="w-full max-w-5xl mx-auto">
+          <CarouselContent>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "Absolutely thrilled with our new siding! The team was professional, efficient, and the quality is outstanding. Our home looks brand new."
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-secondary to-amber-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">Sarah M.</p>
+                        <p className="text-sm text-muted-foreground">North York</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "Great experience from start to finish. They helped us choose the perfect color and the installation was flawless. Highly recommend!"
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">Michael T.</p>
+                        <p className="text-sm text-muted-foreground">Scarborough</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "Best investment we made in our home. The energy savings alone make it worth it, plus it looks amazing. Very happy with the results!"
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">Jennifer L.</p>
+                        <p className="text-sm text-muted-foreground">Etobicoke</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "The crew was amazing! They completed the job on time and cleaned up perfectly. Our neighbors keep asking who did our siding!"
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">David K.</p>
+                        <p className="text-sm text-muted-foreground">Mississauga</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "Professional service from quote to completion. They matched our existing siding perfectly for the repair. You can't even tell where the new panels are!"
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">Lisa P.</p>
+                        <p className="text-sm text-muted-foreground">Markham</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-2">
+                <Card className="border-none shadow-xl bg-background h-full">
+                  <CardContent className="pt-8 pb-6 flex flex-col h-full">
+                    <div className="flex gap-1 mb-4">
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                      <Star className="h-5 w-5 fill-secondary text-secondary" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic flex-grow leading-relaxed">
+                      "Excellent workmanship and fair pricing. They took the time to explain all our options and helped us make the best choice for our budget."
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center shadow-md">
+                        <Users className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-foreground text-lg">Robert H.</p>
+                        <p className="text-sm text-muted-foreground">Vaughan</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
+      </div>
+    </section>
+
+    {/* Financing & CTA */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Flexible Options</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">Financing Available</h2>
+            <p className="text-muted-foreground mb-6 text-lg">
+              Don't let budget concerns delay your home improvement project. We offer flexible financing options to make your dream exterior affordable.
+            </p>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <DollarSign className="h-5 w-5 text-secondary-foreground" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-1">Competitive Rates</h4>
+                  <p className="text-muted-foreground text-sm">Low-interest financing plans available</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <ThumbsUp className="h-5 w-5 text-secondary-foreground" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-1">Quick Approval</h4>
+                  <p className="text-muted-foreground text-sm">Fast application process with instant decisions</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg gradient-amber flex items-center justify-center shrink-0">
+                  <Clock className="h-5 w-5 text-secondary-foreground" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-1">Flexible Terms</h4>
+                  <p className="text-muted-foreground text-sm">Payment plans that fit your budget</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-10 shadow-xl text-primary-foreground">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Home?</h3>
+            <p className="text-primary-foreground/90 mb-6 text-lg">
+              Get a free consultation and quote today. Our experts will help you choose the perfect siding for your home.
+            </p>
+            <Button asChild size="lg" className="w-full bg-secondary text-secondary-foreground hover:bg-amber-dark py-6 text-lg shadow-lg">
+              <Link to="/contact">Schedule Free Consultation</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
 );
 
 export const CommercialSiding = () => (
-  <ServicePageLayout
-    title="Commercial Siding"
-    subtitle="Professional siding solutions for commercial properties"
-    description={[
-      "First impressions matter for your business. Our commercial siding services deliver professional-grade exterior cladding for offices, retail spaces, warehouses, and multi-unit residential buildings.",
-      "We understand the unique requirements of commercial projects including timelines, budgets, and building codes. Our team works efficiently to minimize disruption to your business operations.",
-    ]}
-    features={[
-      "Office buildings",
-      "Retail storefronts",
-      "Warehouse & industrial",
-      "Multi-unit residential",
-      "Code compliance",
-      "Minimal business disruption",
-      "Project management",
-      "Commercial warranties",
-    ]}
-  />
+  <div className="min-h-screen">
+    <Navbar />
+    
+    {/* Hero Section with Background Image */}
+    <section className="relative py-32 overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80"></div>
+      </div>
+      <div className="container mx-auto text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">Commercial Siding</h1>
+        <p className="text-primary-foreground/90 max-w-2xl mx-auto text-lg md:text-xl">Professional siding solutions for commercial properties</p>
+      </div>
+    </section>
+
+    {/* Main Description */}
+    <section className="py-20 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          First impressions matter for your business. Our commercial siding services deliver professional-grade exterior cladding for offices, retail spaces, warehouses, and multi-unit residential buildings.
+        </p>
+        <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+          We understand the unique requirements of commercial projects including timelines, budgets, and building codes. Our team works efficiently to minimize disruption to your business operations.
+        </p>
+      </div>
+    </section>
+
+    {/* Commercial Property Types */}
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Our Expertise</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Commercial Properties We Serve</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Professional siding solutions for every type of commercial building</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card className="border-none shadow-lg hover:shadow-2xl transition-all group">
+            <CardContent className="pt-8 pb-6 text-center">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <Briefcase className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Office Buildings</h3>
+              <p className="text-muted-foreground text-sm">
+                Professional exteriors for corporate offices and business centers
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-2xl transition-all group">
+            <CardContent className="pt-8 pb-6 text-center">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <Store className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Retail Storefronts</h3>
+              <p className="text-muted-foreground text-sm">
+                Eye-catching facades that attract customers and boost brand image
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-2xl transition-all group">
+            <CardContent className="pt-8 pb-6 text-center">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <Factory className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Warehouse & Industrial</h3>
+              <p className="text-muted-foreground text-sm">
+                Durable solutions for warehouses, factories, and industrial facilities
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-2xl transition-all group">
+            <CardContent className="pt-8 pb-6 text-center">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <Building className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Multi-Unit Residential</h3>
+              <p className="text-muted-foreground text-sm">
+                Large-scale projects for apartment complexes and condominiums
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* Why Choose Us for Commercial */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Commercial Advantages</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Why Businesses Choose Us</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Specialized expertise for commercial projects</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary to-amber-600 flex items-center justify-center shrink-0 shadow-md">
+              <ClipboardCheck className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Code Compliance Experts</h3>
+              <p className="text-muted-foreground text-sm">
+                We ensure all work meets local building codes, fire safety regulations, and commercial standards for hassle-free inspections.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shrink-0 shadow-md">
+              <Calendar className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Flexible Scheduling</h3>
+              <p className="text-muted-foreground text-sm">
+                We work around your business hours, including evenings and weekends, to minimize disruption to your operations.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shrink-0 shadow-md">
+              <Users className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Dedicated Project Manager</h3>
+              <p className="text-muted-foreground text-sm">
+                Single point of contact who coordinates all aspects of your project, keeping you informed every step of the way.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shrink-0 shadow-md">
+              <BadgeCheck className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Commercial Warranties</h3>
+              <p className="text-muted-foreground text-sm">
+                Extended warranty coverage designed for commercial properties with comprehensive protection for your investment.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shrink-0 shadow-md">
+              <Zap className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Fast Turnaround</h3>
+              <p className="text-muted-foreground text-sm">
+                Efficient crews and streamlined processes ensure your project is completed on time and within budget.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 bg-muted/50 p-6 rounded-xl hover:bg-muted transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shrink-0 shadow-md">
+              <Headphones className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-2">24/7 Support</h3>
+              <p className="text-muted-foreground text-sm">
+                Emergency response team available around the clock for urgent repairs and maintenance needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Project Process */}
+    <section className="py-16 bg-gradient-to-br from-muted/50 to-muted/20">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Our Process</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Commercial Project Workflow</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Streamlined process for efficient project delivery</p>
+        </div>
+
+        <div className="relative">
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-secondary to-secondary opacity-20 -translate-y-1/2"></div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 relative">
+            <div className="text-center">
+              <div className="relative inline-block mb-4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-secondary to-amber-600 flex items-center justify-center mx-auto shadow-xl">
+                  <Phone className="h-12 w-12 text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                  1
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Initial Consultation</h3>
+              <p className="text-muted-foreground text-sm">
+                Discuss project scope, timeline, and budget requirements
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="relative inline-block mb-4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto shadow-xl">
+                  <FileText className="h-12 w-12 text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                  2
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Site Assessment</h3>
+              <p className="text-muted-foreground text-sm">
+                Detailed inspection and measurements of your property
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="relative inline-block mb-4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto shadow-xl">
+                  <ClipboardCheck className="h-12 w-12 text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                  3
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Proposal & Approval</h3>
+              <p className="text-muted-foreground text-sm">
+                Detailed quote with materials, timeline, and terms
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="relative inline-block mb-4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto shadow-xl">
+                  <Hammer className="h-12 w-12 text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                  4
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Installation</h3>
+              <p className="text-muted-foreground text-sm">
+                Professional installation with minimal business disruption
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="relative inline-block mb-4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mx-auto shadow-xl">
+                  <BadgeCheck className="h-12 w-12 text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-lg">
+                  5
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">Final Inspection</h3>
+              <p className="text-muted-foreground text-sm">
+                Quality check and walkthrough with project manager
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section className="py-20 bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <div className="bg-gradient-to-br from-primary via-primary to-primary/90 rounded-3xl p-12 shadow-2xl text-center text-primary-foreground relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid-white/10"></div>
+          <div className="relative z-10">
+            <Building2 className="h-16 w-16 mx-auto mb-6 text-secondary" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Upgrade Your Commercial Property?</h2>
+            <p className="text-primary-foreground/90 mb-8 text-lg max-w-2xl mx-auto">
+              Get a free commercial estimate today. Our team specializes in large-scale projects with minimal disruption to your business.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-amber-dark px-10 py-6 text-lg shadow-lg">
+                <Link to="/contact">Request Commercial Quote</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 px-10 py-6 text-lg shadow-lg border-0">
+                <Link to="/contact">Schedule Site Visit</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
 );
