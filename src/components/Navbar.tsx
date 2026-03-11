@@ -30,20 +30,20 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 xl:h-24">
           {/* Logo and Brand */}
-          <Link to="/" className="flex items-center gap-2.5">
-            <img src={logo} alt="Toronto Siding" className="h-10 w-auto" />
-            <span className="text-xl font-bold text-primary tracking-tight whitespace-nowrap">Toronto Siding</span>
+          <Link to="/" className="flex items-center gap-2.5 xl:gap-3">
+            <img src={logo} alt="Toronto Siding" className="h-10 xl:h-12 w-auto" />
+            <span className="text-xl xl:text-2xl font-bold text-primary tracking-tight whitespace-nowrap">Toronto Siding</span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             {navLinks.map((link) =>
               link.children ? (
                 <div key={link.name} className="relative group">
                   <button
-                    className={`flex items-center gap-1 text-[15px] font-medium transition-colors ${
+                    className={`flex items-center gap-1 text-[15px] xl:text-base font-medium transition-colors ${
                       location.pathname.startsWith("/services")
                         ? "text-secondary"
                         : "text-foreground hover:text-secondary"
@@ -53,10 +53,10 @@ const Navbar = () => {
                     <ChevronDown className="h-4 w-4" />
                   </button>
                   <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[220px]">
+                    <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[220px] xl:min-w-[240px]">
                       <Link
                         to="/services"
-                        className="block px-4 py-2.5 text-[15px] text-foreground hover:bg-gray-50 hover:text-secondary transition-colors"
+                        className="block px-4 py-2.5 text-[15px] xl:text-base text-foreground hover:bg-gray-50 hover:text-secondary transition-colors"
                       >
                         All Services
                       </Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
                         <Link
                           key={child.path}
                           to={child.path}
-                          className="block px-4 py-2.5 text-[15px] text-foreground hover:bg-gray-50 hover:text-secondary transition-colors"
+                          className="block px-4 py-2.5 text-[15px] xl:text-base text-foreground hover:bg-gray-50 hover:text-secondary transition-colors"
                         >
                           {child.name}
                         </Link>
@@ -76,7 +76,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`text-[15px] font-medium transition-colors ${
+                  className={`text-[15px] xl:text-base font-medium transition-colors ${
                     location.pathname === link.path
                       ? "text-secondary"
                       : "text-foreground hover:text-secondary"
@@ -90,7 +90,7 @@ const Navbar = () => {
 
           {/* Right Side - Phone & CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button asChild className="bg-secondary text-white hover:bg-amber-dark font-semibold px-6 rounded-md">
+            <Button asChild className="bg-secondary text-white hover:bg-amber-dark font-semibold px-6 xl:px-8 rounded-md text-base">
               <Link to="/contact">Get Free Quote</Link>
             </Button>
           </div>

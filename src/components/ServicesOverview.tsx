@@ -60,18 +60,18 @@ const services = [
 
 const ServicesOverview = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-slate-light">
+    <section className="py-20 xl:py-24 2xl:py-28 bg-gradient-to-b from-background to-slate-light">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="inline-block text-secondary font-bold text-sm uppercase tracking-wider bg-secondary/10 px-4 py-2 rounded-full mb-4">Our Services</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 tracking-tight">
+        <div className="text-center mb-16 xl:mb-20">
+          <span className="inline-block text-secondary font-bold text-sm xl:text-base uppercase tracking-wider bg-secondary/10 px-4 py-2 rounded-full mb-4">Our Services</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mt-3 tracking-tight">
             Premium Siding Solutions
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-base md:text-lg xl:text-xl mt-5 max-w-2xl xl:max-w-3xl mx-auto leading-relaxed">
             From installation to repair, we provide comprehensive siding services for residential and commercial properties across Toronto.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
           {services.map((s, index) => (
             <Link
               to={s.link}
@@ -80,7 +80,7 @@ const ServicesOverview = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 xl:h-56 overflow-hidden">
                 <img 
                   src={s.image} 
                   alt={s.title}
@@ -90,15 +90,15 @@ const ServicesOverview = () => {
               </div>
               
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-3 tracking-tight group-hover:text-secondary transition-colors">{s.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{s.desc}</p>
+              <div className="p-6 xl:p-8">
+                <h3 className="text-xl xl:text-2xl font-semibold text-foreground mb-3 tracking-tight group-hover:text-secondary transition-colors">{s.title}</h3>
+                <p className="text-muted-foreground text-sm xl:text-base leading-relaxed mb-4">{s.desc}</p>
                 
                 {/* Features List */}
                 <div className="space-y-2 mb-5">
                   {s.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-sm">
-                      <FaCheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                    <div key={idx} className="flex items-center gap-2 text-sm xl:text-base">
+                      <FaCheckCircle className="h-4 w-4 xl:h-5 xl:w-5 text-green-500 flex-shrink-0" />
                       <span className="text-muted-foreground font-medium">{feature}</span>
                     </div>
                   ))}
@@ -106,7 +106,7 @@ const ServicesOverview = () => {
 
                 {/* CTA */}
                 <div className="pt-4 border-t border-border">
-                  <span className="inline-flex items-center text-secondary text-sm font-bold group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center text-secondary text-sm xl:text-base font-bold group-hover:gap-2 transition-all">
                     Read More <FaArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
@@ -116,22 +116,22 @@ const ServicesOverview = () => {
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="mt-16 text-center bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8 border border-primary/10">
-          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Not Sure Which Service You Need?</h3>
-          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+        <div className="mt-16 xl:mt-20 text-center bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8 xl:p-10 border border-primary/10">
+          <h3 className="text-2xl md:text-3xl xl:text-4xl font-bold text-foreground mb-3">Not Sure Which Service You Need?</h3>
+          <p className="text-muted-foreground text-base xl:text-lg mb-6 max-w-xl xl:max-w-2xl mx-auto">
             Our expert team is here to help you choose the perfect siding solution for your property. Get a free consultation today!
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 xl:gap-6">
             <Link 
               to="/contact" 
-              className="inline-flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-dark transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 bg-secondary text-white px-6 xl:px-8 py-3 xl:py-4 rounded-lg font-semibold hover:bg-amber-dark transition-colors shadow-lg text-base xl:text-lg"
             >
               Get Free Consultation
               <FaArrowRight />
             </Link>
             <a 
               href="tel:+16471234567" 
-              className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg border-2 border-primary"
+              className="inline-flex items-center gap-2 bg-white text-primary px-6 xl:px-8 py-3 xl:py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg border-2 border-primary text-base xl:text-lg"
             >
               Call (647) 123-4567
             </a>

@@ -155,4 +155,17 @@
   .shadow-card-hover {
     box-shadow: 0 8px 30px -4px hsl(215 70% 22% / 0.18);
   }
+
+  /* Optimized for 1280px and 1920px */
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .container {
+      max-width: 1600px;
+    }
+  }
 }
