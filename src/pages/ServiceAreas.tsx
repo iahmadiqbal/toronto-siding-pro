@@ -21,12 +21,12 @@ const ServiceAreas = () => (
       </div>
       
       <div className="container mx-auto text-center relative z-10">
-        <div className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-semibold text-sm uppercase tracking-wider px-5 py-2 rounded-full mb-6">
+        <div className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-semibold text-sm uppercase tracking-wider px-5 py-2 rounded-full mb-6 animate-fade-in-up">
           <MapPin className="h-4 w-4" />
           <span>Serving GTA & Beyond</span>
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">Service Areas</h1>
-        <p className="text-primary-foreground/90 text-lg md:text-xl max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>Service Areas</h1>
+        <p className="text-primary-foreground/90 text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           Professional siding solutions across the Greater Toronto Area
         </p>
       </div>
