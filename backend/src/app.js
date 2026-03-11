@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5001;
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:8080",
+    origin: ["https://toronto-siding-pro.vercel.app", "http://localhost:8080"],
   }),
 );
 app.use(express.json());
