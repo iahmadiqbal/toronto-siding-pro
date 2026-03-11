@@ -10,6 +10,7 @@ const services = [
   { name: "Siding Repair", path: "/services/siding-repair" },
   { name: "Residential Siding", path: "/services/residential-siding" },
   { name: "Commercial Siding", path: "/services/commercial-siding" },
+  { name: "Vinyl Siding", path: "/services/vinyl-siding" },
 ];
 
 const navLinks = [

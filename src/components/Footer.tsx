@@ -20,17 +20,17 @@ const Footer = () => {
             <h4 className="text-primary-foreground font-semibold text-base mb-4 tracking-tight">Services</h4>
             <ul className="space-y-2.5">
               <li>
-                <Link to="/services/siding-installation" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                <Link to="/services/vinyl-siding" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
                   Vinyl Siding
                 </Link>
               </li>
               <li>
-                <Link to="/services/siding-installation" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                <Link to="/services/cedar-siding" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
                   Cedar Siding
                 </Link>
               </li>
               <li>
-                <Link to="/services/siding-installation" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                <Link to="/services/fiber-cement-siding" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
                   Fiber Cement Siding
                 </Link>
               </li>
@@ -40,12 +40,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                <Link to="/services/soffit-fascia" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
                   Soffit & Fascia
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
+                <Link to="/services/gutter-installation" className="text-primary-foreground/70 text-sm hover:text-secondary transition-colors font-medium">
                   Gutter Installation
                 </Link>
               </li>
