@@ -25,19 +25,22 @@ const ContactForm = () => {
     setSuccess(false);
 
     try {
-      const response = await fetch("http://localhost:5001/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/contact`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            service: form.service,
+            message: form.message,
+          }),
         },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          service: form.service,
-          message: form.message,
-        }),
-      });
+      );
 
       const data = await response.json();
 
